@@ -388,6 +388,10 @@ async def main():
                         help=f"Server WebSocket URL (default: {GAME_SERVER})")
     parser.add_argument("--name", "-n", default=None,
                         help=f"Bot display name (default: {BOT_NAME})")
+    parser.add_argument("--difficulty", "-d", type=int, default=5,
+                        help="AI difficulty level 1-10 (accepted for compatibility, not yet used)")
+    parser.add_argument("--quiet", "-q", action="store_true",
+                        help="Suppress console output")
     args = parser.parse_args()
 
     bot = MyBot(args.server, name=args.name)

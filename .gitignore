@@ -20,3 +20,6 @@ env/
 # OS
 .DS_Store
 Thumbs.db
+
+# Large media files
+*.mp4
