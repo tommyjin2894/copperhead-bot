@@ -1,6 +1,6 @@
 # CopperHead Bot
 
-Version: 4.0.4
+Version: 4.0.5
 
 A starter template for building your own AI bot to compete in [CopperHead](https://github.com/revodavid/copperhead-server) Snake tournaments.
 
@@ -128,6 +128,22 @@ Your bot must accept the following command-line options:
 | `--name` | `-n` | `MyBot` | Your bot's display name |
 | `--difficulty` | `-d` | `5` | AI difficulty level (1-10) — 1 should be the least capable and 10 the smartest. For the default `mybot.py` all difficulty levels are the same |
 | `--quiet` | `-q` | `false` | Suppress console output |
+
+## Troubleshooting
+
+### Bot crashes into walls unexpectedly
+
+Your bot's move commands take time to reach the server over the network. If your bot is running far from the server (e.g., on your local machine connecting to a cloud-hosted server), the delay can cause your snake to hit a wall or obstacle even though your bot sent a turn command in time based on the game state it received.
+
+**Diagnose:** If you're using GitHub Copilot CLI, run the `test-latency` skill to measure your connection speed to the server:
+```
+copilot "test latency to ws://your-server-url/ws/"
+```
+This will compare your round-trip latency to the server's tick rate and tell you if latency is likely causing issues.
+
+**Fixes:**
+- **Run your bot closer to the server** — for example, in the same Codespace or cloud region as the server. This minimizes network round-trip time.
+- **Increase the server's tick duration** — set a higher `speed` value in `server-settings.json` (e.g., `0.3` instead of `0.15`). Slower ticks give your bot more time to react.
 
 ## In Detail: How Bots Work
 
