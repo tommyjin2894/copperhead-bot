@@ -1,6 +1,6 @@
 # CopperHead Bot
 
-Version: 4.0.8
+Version: 4.1.0
 
 A starter template for building your own AI bot to compete in [CopperHead](https://github.com/revodavid/copperhead-server) Snake tournaments.
 
