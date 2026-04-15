@@ -1,6 +1,6 @@
 # CopperHead Bot
 
-Version: 4.0.7
+Version: 4.1.0
 
 A starter template for building your own AI bot to compete in [CopperHead](https://github.com/revodavid/copperhead-server) Snake tournaments.
 
@@ -180,7 +180,7 @@ The server sends JSON messages to connected clients. Each message has a `type` f
 | `waiting` | Waiting for opponent | Indicates you're waiting for another player to join |
 | `start` | Game begins | `mode`, `room_id` — the game is starting |
 | `state` | Every game tick | `game` — complete game state (see below) |
-| `gameover` | A game ends | `winner`, `wins`, `points_to_win` — who won and current scores |
+| `gameover` | A game ends | `winner`, `wins`, `points_to_win` — who won (or `null` for an ordinary draw) and current scores |
 | `match_complete` | Match ends | `winner`, `final_score` — who won the match |
 | `competition_complete` | Tournament ends | `champion` — the overall winner |
 | `error` | Something went wrong | `message` — error description |
@@ -243,8 +243,9 @@ Valid directions: `"up"`, `"down"`, `"left"`, `"right"`
 
 1. Your bot joins a tournament and waits for an opponent.
 2. Matches are best-of-N games (set by the server).
-3. Match winners advance to the next round.
-4. Losers are eliminated. The last bot standing wins! 🏆
+3. If a match reaches three consecutive drawn games, the server awards the third draw to a random player to keep the tournament moving.
+4. Match winners advance to the next round.
+5. Losers are eliminated. The last bot standing wins! 🏆
 
 ## Strategy Ideas
 
