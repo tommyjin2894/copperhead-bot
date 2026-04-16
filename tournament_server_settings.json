@@ -1,0 +1,57 @@
+{
+    "log_file": "server-log.txt",
+    "auto_start": "always",
+    "tournament_countdown": 30,
+    "arenas": 1,
+    "points_to_win": 3,
+    "reset_delay": 10,
+    "game-timeout": 30,
+    "grid_size": "15x15",
+    "speed": 0.25,
+    "bots": 0,
+    "fruit_warning": 10,
+    "max_fruits": 5,
+    "fruit_interval": 8,
+    "fruits": {
+        "apple": {
+            "propensity": 9,
+            "lifetime": 0
+        },
+        "orange": {
+            "propensity": 0,
+            "lifetime": 0
+        },
+        "lemon": {
+            "propensity": 0,
+            "lifetime": 0
+        },
+        "grapes": {
+            "propensity": 1,
+            "lifetime": 40
+        },
+        "strawberry": {
+            "propensity": 0,
+            "lifetime": 0
+        },
+        "banana": {
+            "propensity": 0,
+            "lifetime": 0
+        },
+        "peach": {
+            "propensity": 0,
+            "lifetime": 0
+        },
+        "cherry": {
+            "propensity": 0,
+            "lifetime": 0
+        },
+        "watermelon": {
+            "propensity": 0,
+            "lifetime": 0
+        },
+        "kiwi": {
+            "propensity": 0,
+            "lifetime": 0
+        }
+    }
+}
